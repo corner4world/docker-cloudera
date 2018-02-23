@@ -3,7 +3,7 @@ version: '2'
 services:
   cloudera:
     image: cloudera/quickstart:latest
-    command: bash -c "/root/startup.sh; /usr/bin/docker-quickstart"
+    command: bash -c "/root/startup.sh; sudo service cloudera-scm-manager start"
     tty: true
     privileged: true
     hostname: quickstart.cloudera
@@ -23,7 +23,6 @@ services:
       - "8983:8983"
       - "16000:16000"
       - "16001:16001"
-      - "42222:22"
       - "8042:8042"
       - "60010:60010"
       - "8080:8080"
