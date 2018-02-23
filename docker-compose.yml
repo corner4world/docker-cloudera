@@ -2,8 +2,7 @@ version: '2'
 
 services:
   cloudera:
-    build:
-      context: cloudera/
+    image: cloudera/quickstart:latest
     command: bash -c "/root/startup.sh; /usr/bin/docker-quickstart"
     tty: true
     privileged: true
