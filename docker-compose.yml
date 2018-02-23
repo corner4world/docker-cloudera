@@ -3,7 +3,7 @@ version: '2'
 services:
   cloudera:
     image: cloudera/quickstart:latest
-    command: bash -c "/root/startup.sh; sudo /home/cloudera/clouder-manager --pause --express"
+    command: bash -c "/root/startup.sh; /usr/bin/docker-quickstart;"
     tty: true
     privileged: true
     hostname: quickstart.cloudera
@@ -27,6 +27,7 @@ services:
       - "60010:60010"
       - "8080:8080"
       - "7077:7077"
+      - "18080:18080"
 
     networks:
       - cloudera
